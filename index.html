@@ -1,228 +1,620 @@
-﻿<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>无敌的战队</title>
-<link type="text/css" href="css/jquery.fullpage.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-<link type="text/css" href="css/style.css" rel="stylesheet" />
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-</head>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: #eee;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .top-title{
+            width: 100%;
+            text-align: center;
+            color: rgba(0,0,0,.7);
+        }
+        .news{
+            width: 9rem;
+            padding: 9px;
+            margin: 0 auto;
+            font-size: 2.8rem;
+            text-align: center;
+            border-radius: 50%;
+            border: .5rem solid #fff;
+            box-shadow: 0 0 7px rgba(0,0,0,.15);
+            background: rgba(14,25,145,.06);
+        }
+        .tips{
+            margin-top: 15px;
+            font-size: 2rem;
+            color: rgba(0,0,0,.4);
+        }
+        .home-img{
+            width: 80%;
+            margin-top: 16%;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,.01)
+        }
+        .row{
+            margin: 4% 0;
+            text-align: center;
+        }
+        .img-li{
+            width: 45%;
+        }
+        .ww-img{
+            height: 130px;
+            width: 35%;
+            margin-right: 1rem;
+            border-radius: 50%;
+        }
+        h3{
+            margin: 0 0 10%;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .row p{
+            text-align: left;
+            margin: 5% 0;
+        }
+        .verse-list li{
+            line-height: 35px;
+        }
+        .flow{
+            display: flex;
+        }
+        .flow ul{
+            width: 50%;
+            margin: .5rem;
+        }
+        .flow img{
+            width: 100%;
+            margin-bottom: .5rem;
+            border-radius: 7px;
+            box-shadow: 0 0 3px rgba(0,0,0,.5);
+        }
+        .person-wrap{
+            display: flex;
+            overflow-x: scroll;;
+            width: 85%;
+            height: 53%;
+        }
+        .hd-wrap{
+            height: 100%;
+            margin: 0 2vw 0 0;
+            padding: 8px 15px;
+            color: rgba(0,0,0,.7);
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,.3);
+        }
+        .hd-wrap ul{
+            width: 66vw;
+        }
+        .hd-wrap ul li{
+            line-height: 31px;
+        }
+        .bang{
+            width: 80%;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.1);
+        }
+        .arrow-box{
+            position: absolute;
+            bottom: -45px;
+            height: 80px;
+            width: 50%;
+            text-align: center;
+            border-radius: 100%;
+            background: rgba(255,255,255,.18);
+        }
+        .arrow{
+            width: 20px;
+            height: 15px;
+            margin-top: 16px;
+            -webkit-animation: start 1.5s infinite ease-in-out;
+            animation: start 1.5s infinite ease-in-out;
+        }
+        @keyframes start {
+            0%,100%{
+                margin-top: 16px;
+            }
+            50%{
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
 <body>
-<!--
-<nav class="nav">
-    <ul>
-        <li>
-        	<span class="eng">home</span>
-            <span>首页<span>
-        </li>
-        <li>
-        	<span class="eng">about</span>
-            <span>关于<span>
-        </li>
-        <li>
-        	<span class="eng">production</span>
-          	<span>作品<span>
-        </li>
-        <li>
-        	<span class="eng">contact</span>
-            <span>联系<span>
-        </li>
-    </ul>
-</nav>
--->
-<div id="fullpage">
-    <div class="section">
-    	<div class="content-1">
-        	<span>加入我们战队的人</span>
-            <span>眼里总有别人看不到的世界</span>
+<audio autoplay>
+    <source id="myaudio" src="void/mzdhl.mp3" loop="loop">
+</audio>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-color: rgb(183 113 103)">
+            <div class="top-title">
+                <p class="news ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">战队简介</p>
+                <p class="tips">刚刚出炉的消息</p>
+            </div>
+            <img class="home-img ani"  swiper-animate-effect="slideInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.13s" src="img/home-img.png">
+            <div class="arrow-box">
+                <img class="arrow" src="img/arrow.png">
+            </div>
         </div>
-    </div>
-    <div class="section">
-    	<div class="content-2">
-        	<div class="con-con">
-            	<ul>
-                	<li data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="顶级娱乐工会">
-                    	<span><img src="picture/logo.png" /></span>
-                        <span>上分</span>
+        <div class="swiper-slide"  style="background-color: rgb(74 119 113)">
+            <h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">战队成员</h3>
+            <div class="person-wrap ani"  swiper-animate-effect="rotateInUpLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hd-wrap">
+                    <h4>个人信息</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <span>游戏ID：</span>
+                            <span>zhang</span>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <span>女</span>
+                        </li>
+                        <li>
+                            <span>年龄：</span>
+                            <span>20</span>
+                        </li>
+                        <li>
+                            <span>性格：</span>
+                            <span>温和，平易近人</span>
+                        </li>
+                        <!--<li>
+                            <span>电话：</span>
+                            <span>**********</span>
+                        </li>
+                        <li>
+                            <span>微信：</span>
+                            <span>183244632</span>
+                        </li>-->
+                        <li>
+                            <span>段位：</span>
+                            <span>荣耀黄金</span>
+                        </li>
+                        <li>
+                            <span>历史最高：</span>
+                            <span>荣耀百星</span>
+                        </li>
+                        <li>
+                            <span>简介：</span>
+                            <span>国服露娜，国服赔钱虎</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="arrow-box">
+                <img class="arrow" src="img/arrow.png">
+            </div>
+        </div>
+        <div class="swiper-slide"   style="background-color: rgb(128 81 81)">
+            <div class="container">
+                <h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">唯美图片和句子</h3>
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                          <img class="img-li ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s" src="img/img1.jpg">
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                          <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">很多人的失落，是违背了自己少年时的立志。自认为成熟、自认为练达、自认为精明，从前多幼稚，总算看透了、想穿了。于是，我们就此变成自己年少时最憎恶的那种人。</p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                          <img class="img-li ani"  swiper-animate-effect="fadeInDownBig" swiper-animate-duration="0.8s" swiper-animate-delay="0.9s" src="img/img2.jpg">
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                          <p class="ani" swiper-animate-effect="rotateInUpRight" swiper-animate-duration="0.10s" swiper-animate-delay="0.9s">这个世界欺骗了我 我必须给予还击 我不会放掉任何一丁点儿属于我的幸福 哪怕付出的代价是从此坠入地狱 我也在所不惜。</p>
+                      </div>
+                  </div>
+            </div>
+            <div class="arrow-box">
+                <img class="arrow" src="img/arrow.png">
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-color: rgb(92 136 173)">
+            <div class="container">
+                <h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.15s" swiper-animate-delay="0.3s">唐诗三百首</h3>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6" style="display: flex;justify-content: center; align-items: center; margin-bottom: 12px">
+                        <img class="ww-img ani" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="0.15s" swiper-animate-delay="0.5s" src="img/wangwei.jpg">
+                        <div class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.15s" swiper-animate-delay="0.7s">
+                            <span style="display:inline-block; font-size: 2.5rem; margin-bottom: 6px">王维</span><br>
+                            <span>唐代诗人(称为“诗佛”)</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                        <h4 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.15s" swiper-animate-delay="0.15s">终南别业 <small> 唐代：王维</small></h4>
+                        <ul class="list-unstyled verse-list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.15s" swiper-animate-delay="0.9s">
+                            <li>中岁颇好道，晚家南山陲。</li>
+                            <li>兴来每独往，胜事空自知。</li>
+                            <li>行到水穷处，坐看云起时。</li>
+                            <li>偶然值林叟，谈笑无还期。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow-box">
+                <img class="arrow" src="img/arrow.png">
+            </div>
+        </div>
+        <div class="swiper-slide" style="background-color: rgb(123 122 177)">
+            <h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">狗狗的美图</h3>
+            <div class="flow">
+                <ul class="list-unstyled ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.15s" swiper-animate-delay="0.10s">
+                    <li>
+                        <img src="img/g1.png">
                     </li>
-                    <li data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="顶级娱乐工会">
-                    	<span><img src="picture/logo.png" /></span>
-                        <span>内战</span>
+                    <li>
+                        <img src="img/g3.png">
                     </li>
-                    <li data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="顶级娱乐工会">
-                    	<span><img src="picture/logo.png" /></span>
-                        <span>翻车</span>
+                    <li>
+                        <img src="img/img4.jpg">
                     </li>
-                    <li data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="顶级娱乐工会">
-                    	<span><img src="picture/logo.png" /></span>
-                        <span>开车</span>
+                    <li>
+                        <img src="img/g7.png">
                     </li>
-                    <li data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="顶级娱乐工会">
-                    	<span><img src="picture/logo.png" /></span>
-                        <span>国服</span>
+                </ul>
+                <ul class="list-unstyled ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.15s" swiper-animate-delay="0.10s">
+                    <li>
+                        <img src="img/g5.png">
                     </li>
-                    <li data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="顶级娱乐工会">
-                    	<span><img src="picture/logo.png" /></span>
-                        <span>娱乐</span>
+                    <li>
+                        <img src="img/img1.jpg">
+                    </li>
+                    <li>
+                        <img src="img/g6.png">
+                    </li>
+                    <li>
+                        <img src="img/img4.jpg">
                     </li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="section">
-    	<div class="content-3">
-        	<ul>
-            	<li>
-                	<a></a>
-                    <a></a>
-                    <a href="#">
-                    	<img src="picture/img-1.jpg" />
-                    	<p></p>
-                    </a>
-                </li>
-                <li>
-                	<a href="#">
-                    	<img src="picture/img-2.jpg" />
-                    	<p></p>
-                    </a>
-                    <a href="#">
-                    	<img src="picture/img-3.jpg" />
-                    	<p></p>
-                    </a>
-                    <a href="#">
-                    	<img src="picture/img-4.jpg" />
-                    	<p></p>
-                    </a>
-                </li>
-                <li>
-                	<a href="#">
-                    	<img src="picture/img-2.jpg" />
-                    	<p></p>
-                    </a>
-                    <a href="#">
-                    	<img src="picture/img-3.jpg" />
-                    	<p></p>
-                    </a>
-                    <a href="#">
-                    	<img src="picture/img-4.jpg" />
-                    	<p></p>
-                    </a>
-                </li>
-                <li>
-                	<a href="#">
-                    	<img src="picture/img-2.jpg" />
-                    	<p></p>
-                    </a>
-                    <a href="#">
-                    	<img src="picture/img-3.jpg" />
-                    	<p></p>
-                    </a>
-                    <a href="#">
-                    	<img src="picture/img-4.jpg" />
-                    	<p></p>
-                    </a>
-                </li>
-                <li>
-                	<a href="#">
-                    	<img src="picture/img-1.jpg" />
-                    	<p></p>
-                    </a>
-                    <a></a>
-                    <a></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="section">
-    	<div class="contact">
-        	<h3 class="me">联系我们</h3>
-            <p class="me">QQ1111111111</p>
-            <p class="me">Contact me</p>
-            <a class="ewm"><img src="picture/demo.png" /></a>
-        </div>
-        <div class="line">
-        	<div class="share">
-            	<!--<a onClick="xinlang('将我的个人主页分享至新浪','index.html','image/ewm.png');" class="xinlang"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至新浪微博">-->
-                	<!--<img src="picture/xinlang.png" />-->
-                <!--</a>-->
-                <a href="javascript:;" class="qq" onClick="qqShare();"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至QQ好友">
-                	<img src="picture/qq.png" />
-                </a>
-                <a href="javascript:;" class="qq" onClick="qqShare();"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至QQ好友">
-                    <img src="picture/qq.png" />
-                </a>
-                <a href="javascript:;" class="qq" onClick="qqShare();"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至QQ好友">
-                    <img src="picture/qq.png" />
-                </a>
-                <!--<a class="jiathis_button_weixin"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至微信">
-                	<img src="picture/weixin.png" />
-                </a>-->
-                <script type="text/javascript" src="js/jia.js" charset="utf-8"></script>
+            <div class="arrow-box">
+                <img class="arrow" src="img/arrow.png">
             </div>
         </div>
+        <div class="swiper-slide"  style="background-color: rgb(167 104 150)">
+            <div class="top-title">
+                <p class="news ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">结束语</p>
+                <p class="tips">简单的了解已结束</p>
+            </div>
+            <img class="bang ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.13s" src="img/bang.jpg">
+        </div>
     </div>
-</div><br>
+</div>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
 <script>
-$(function(){
-    $('#fullpage').fullpage({
-        'verticalCentered': false,
-        'css3': true,
-        'sectionsColor': ['#825b56', '#343b4e', '#4b6558', '#822c2b'],
-        anchors: ['page1', 'page2', 'page3', 'page4'],
-        'navigation': true,
-        'navigationPosition': 'right',
-        'navigationTooltips': ['首页', '关于', '作品', '联系'],
+    var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true,
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
     });
-
-	$("[data-toggle='popover']").popover();
-
-})
-//分享到新浪
-function xinlang(title,url,picurl){
-	var sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
-	window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
-}
-
-//分享給QQ好友
-function qqShare(){
-    var p = {
-    url:'http://wwww.baidu.com', /*获取URL，可加上来自分享到QQ标识，方便统计*/
-    desc:'发送信息给好友',
-    title:'发送信息给好友', /*分享标题(可选)*/
-    summary:'', /*分享摘要(可选)*/
-    pics:'', /*分享图片(可选)*/
-    flash: '', /*视频地址(可选)*/
-    site:'http://wwww.baidu.com', /*分享来源(可选) 如：QQ分享*/
-    style:'203',
-    width:16,
-    height:16
-    };
-    var s = [];
-    for(var i in p){
-        s.push(i + '=' + encodeURIComponent(p[i]||''));
-    }
-    var qhref = "http://connect.qq.com/widget/shareqq/index.html?"+s.join('&');
-    $(".qq").attr({href:qhref,target:"_blank"});
-};
-
-
-//分享給微信好友
-$(".jiathis_button_weixin").mouseenter(function(){
-	$(this).attr("title","");
-});
-
-//作品循环
-$(".content-3 ul li").each(function (i) {
-	$(this).attr("style", "-webkit-transition-delay:" + i * 0.2 + "s;"
-			+ "-moz-transition-delay:" + i * 0.2 + "s;"
-			+ "-o-transition-delay:" + i * 0.2 + "s;"
-			+ "transition-delay:" + i * 0.2 + "s;");
-});
-
 </script>
 </body>
 </html>
